@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GasShield 5LP | Sebastian Quiza</title>
+<meta name="description" content="GasShield 5LP: tarjeta de expansión electrónica para monitoreo de gases desarrollada sobre el microcontrolador PSoC 5LP.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%230a1128'/%3E%3Ccircle cx='50' cy='16' r='6' fill='%23ff5b1f'/%3E%3Ctext x='12' y='43' font-family='system-ui,sans-serif' font-weight='800' font-size='26' fill='%23ffffff'%3ES%3C/text%3E%3Ctext x='30' y='43' font-family='system-ui,sans-serif' font-weight='800' font-size='26' fill='%237aa0ff'%3EQ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">S. Quiza</a>
+    <ul>
+      <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html#perfil">Perfil</a></li>
+      <li><a href="index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<!-- ================= ENCABEZADO ================= -->
+<section class="p-hero dark">
+  <div class="wrap">
+    <a class="back" href="index.html#proyectos">← Volver al portafolio</a>
+    <div><span class="label">Caso de estudio · 2026</span></div>
+    <h1>GasShield <em>5LP</em></h1>
+    <p class="sub">Tarjeta de expansión electrónica para detección y monitoreo de gases sobre PSoC 5LP</p>
+    <p class="lead">Desarrollo de ingeniería electrónica realizado en la Universidad Surcolombiana, enfocado en adquirir, acondicionar y procesar señales de sensores de gas en tiempo real.</p>
+    <div class="tags"><span>PSoC 5LP</span><span>MQ-7</span><span>MQ-135</span><span>ADC</span><span>EasyEDA</span><span>PCB</span><span>Firmware</span></div>
+  </div>
+</section>
+
+<!-- ================= 01 CONTEXTO Y ROL ================= -->
+<section class="p-sec">
+  <div class="wrap p-grid">
+    <div class="head rv">
+      <span class="label">01 · El proyecto</span>
+      <h2>Contexto y <em style="color:var(--accent)">alcance</em></h2>
+    </div>
+    <div class="p-body rv">
+      <p>Durante la calcinación de biomasa en los hornos del Laboratorio de Aguas de la Universidad Surcolombiana se generan emisiones tóxicas, principalmente <strong>monóxido de carbono</strong>. Ante la ausencia de equipos de supervisión ambiental, se diseñó una shield electrónica capaz de capturar y visualizar el comportamiento de sensores de gas.</p>
+
+      <div class="metrics">
+        <div class="metric"><b>+90 %</b><h4>Variación de señal</h4><span>Incremento registrado frente a estímulos de humo en laboratorio.</span></div>
+        <div class="metric"><b>0</b><h4>Errores ERC / DRC</h4><span>La revisión 2.1 superó todas las verificaciones de diseño PCB.</span></div>
+        <div class="metric"><b>US$15,65</b><h4>Costo optimizado</h4><span>Cotización para 5 placas (2 ensambladas SMD; sin THT ni envío).</span></div>
+      </div>
+
+      <figure>
+        <div class="frame foto-pcb"><div class="ph"><b>Prototipo GasShield 5LP</b>fotos/pcb-final.jpg</div>
+          <img src="fotos/pcb-final.jpg" alt="Prototipo de GasShield 5LP con sensor MQ-7, indicadores LED y resistencias sobre la placa" onerror="this.remove()"></div>
+        <figcaption>Placa prototipo funcional: sensor MQ-7, arreglo de LEDs indicadores (verde, amarillo y rojo) y etapa resistiva.</figcaption>
+      </figure>
+
+      <h3>Aportes técnicos en el equipo</h3>
+      <div class="contrib">
+        <div><h3>Desarrollo de firmware</h3><p>Programación de la PSoC 5LP: muestreo analógico con el ADC, temporización del ciclo térmico del calefactor del MQ-7 y transmisión serial al PC.</p></div>
+        <div><h3>Validación en laboratorio</h3><p>Mediciones eléctricas y ensayos de respuesta del sistema, desde el montaje en protoboard hasta las pruebas sobre la PCB prototipo.</p></div>
+        <div><h3>Diseño de circuito y PCB</h3><p>Colaboración en el levantamiento del esquemático y en el enrutamiento de pistas de la tarjeta.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 HARDWARE Y VALIDACIÓN ================= -->
+<section class="p-sec alt">
+  <div class="wrap p-grid">
+    <div class="head rv">
+      <span class="label">02 · Hardware</span>
+      <h2>Diseño y <em style="color:var(--accent)">pruebas</em></h2>
+    </div>
+    <div class="p-body rv">
+      <p>La <strong>PSoC 5LP</strong> opera como unidad central de adquisición, mientras la tarjeta de expansión integra dos sensores (<strong>MQ-7 y MQ-135</strong>) con su etapa de acondicionamiento, potenciómetros de ajuste y tres LEDs de estado por canal. Completan la placa un zumbador, alimentación USB, puerto I2C, jumper de modo y cabeceras de acoplamiento.</p>
+
+      <figure>
+        <a class="zoom" href="fotos/esquematico.jpg" target="_blank" rel="noopener" title="Abrir en tamaño completo">
+          <div class="frame foto-esq"><div class="ph"><b>Esquemático</b>fotos/esquematico.jpg</div>
+            <img src="fotos/esquematico.jpg" alt="Esquemático de GasShield 5LP con los sensores MQ-7 y MQ-135, LED, zumbador, USB e I2C" onerror="this.remove()"></div>
+        </a>
+        <figcaption>Diagrama esquemático general, revisión 2.0 (clic para ampliar).</figcaption>
+      </figure>
+
+      <figure>
+        <a class="zoom" href="fotos/pcb-pistas.jpg" target="_blank" rel="noopener" title="Abrir en tamaño completo">
+          <div class="frame foto-pistas"><div class="ph"><b>Pistas de la PCB</b>fotos/pcb-pistas.jpg</div>
+            <img src="fotos/pcb-pistas.jpg" alt="Trazado de pistas de la PCB GasShield 5LP" onerror="this.remove()"></div>
+        </a>
+        <figcaption>Distribución de componentes y trazado de pistas en EasyEDA (clic para ampliar).</figcaption>
+      </figure>
+
+      <h3>Ensayos experimentales y mediciones</h3>
+      <p>Se realizaron pruebas en banco para comprobar los regímenes eléctricos del ciclo de calentamiento del sensor y su sensibilidad ante agentes externos.</p>
+
+      <div class="two-img">
+        <figure>
+          <div class="frame"><div class="ph"><b>Prototipo</b>fotos/prototipo.jpeg</div>
+            <img src="fotos/prototipo.jpeg" alt="Prototipo físico de GasShield 5LP conectado a la tarjeta PSoC 5LP en protoboard" onerror="this.remove()"></div>
+          <figcaption>Acoplamiento físico entre el prototipo y la tarjeta PSoC 5LP.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame foto-pruebas"><div class="ph"><b>Pruebas</b>fotos/pruebas.jpeg</div>
+            <img src="fotos/pruebas.jpeg" alt="Prueba de respuesta del sensor MQ-7 ante estímulo de humo en protoboard" onerror="this.remove()"></div>
+          <figcaption>Verificación de respuesta ante estímulo de humo.</figcaption>
+        </figure>
+      </div>
+
+      <table>
+        <thead><tr><th>Parámetro eléctrico medido</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>Corriente en fase alta</td><td>140,2 mA</td></tr>
+          <tr><td>Corriente en fase baja</td><td>47,5 mA</td></tr>
+          <tr><td>Tensión en fase alta</td><td>4,59 V</td></tr>
+          <tr><td>Tensión en fase baja</td><td>1,39 V</td></tr>
+          <tr><td>Variación de señal frente a humo</td><td>+90 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 ADQUISICIÓN Y SIMULACIÓN ================= -->
+<section class="p-sec">
+  <div class="wrap p-grid">
+    <div class="head rv">
+      <span class="label">03 · Telemetría</span>
+      <h2>Adquisición y <em style="color:var(--accent)">alertas</em></h2>
+    </div>
+    <div class="p-body rv">
+      <p>El firmware digitaliza las señales analógicas mediante el ADC y transmite voltaje, resistencia del sensor (<em>Rs</em>) y concentración estimada (<em>ppm</em>) por comunicación serial. Desliza la barra para probar la lógica de alertas visuales programada en la placa:</p>
+
+      <div class="sim-card">
+        <div class="sim-top">
+          <div>
+            <small>Simulador de umbrales</small>
+            <div class="sim-readout"><b id="ppm-val">18</b> <span>ppm</span></div>
+          </div>
+          <div class="sim-leds" aria-label="Indicadores LED de la tarjeta">
+            <span class="led g on" id="led-g" title="LED Verde (< 30 ppm)"></span>
+            <span class="led y" id="led-y" title="LED Amarillo (30 - 80 ppm)"></span>
+            <span class="led r" id="led-r" title="LED Rojo (> 80 ppm)"></span>
+          </div>
+        </div>
+
+        <div class="sim-alert g" id="sim-alert" role="status" aria-live="polite">
+          <strong id="alert-title">Nivel normal</strong>
+          <span id="alert-msg">Concentración baja (< 30 ppm); monitoreo estable sin alerta.</span>
+        </div>
+
+        <label class="sr-only" for="ppm-slider">Concentración simulada en ppm</label>
+        <input type="range" id="ppm-slider" min="0" max="120" value="18">
+        <div class="sim-ticks"><span>0 ppm</span><span>30 ppm</span><span>80 ppm</span><span>120 ppm</span></div>
+      </div>
+
+      <div class="scale">
+        <div class="g active" id="row-g"><i></i><b>Verde</b><span>Menos de 30 ppm</span></div>
+        <div class="y" id="row-y"><i></i><b>Amarillo</b><span>De 30 a 80 ppm</span></div>
+        <div class="r" id="row-r"><i></i><b>Rojo</b><span>Más de 80 ppm</span></div>
+      </div>
+      <div class="callout">Los valores en ppm son estimaciones del firmware sin calibración patrón; los umbrales actúan como referencia visual del prototipo y no como límites normativos de seguridad.</div>
+
+      <div class="two-img">
+        <figure>
+          <a class="zoom" href="fotos/resultado-amarillo-31ppm.jpeg" target="_blank" rel="noopener" title="Abrir en tamaño completo">
+            <div class="frame serial"><div class="ph"><b>Registro serial</b>fotos/resultado-amarillo-31ppm.jpeg</div>
+              <img src="fotos/resultado-amarillo-31ppm.jpeg" alt="Registro serial con voltaje, resistencia Rs y lecturas de CO cercanas a 31 ppm" onerror="this.remove()"></div>
+          </a>
+          <figcaption>Terminal serial alrededor de 31 ppm: rango amarillo (clic para ampliar).</figcaption>
+        </figure>
+        <figure>
+          <a class="zoom" href="fotos/resultado-rojo-80ppm.jpeg" target="_blank" rel="noopener" title="Abrir en tamaño completo">
+            <div class="frame serial"><div class="ph"><b>Registro serial</b>fotos/resultado-rojo-80ppm.jpeg</div>
+              <img src="fotos/resultado-rojo-80ppm.jpeg" alt="Registro serial con voltaje, resistencia Rs y lecturas de CO entre 84 y 91 ppm" onerror="this.remove()"></div>
+          </a>
+          <figcaption>Terminal serial sobre 80 ppm: rango rojo (clic para ampliar).</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 EVOLUCIÓN Y MANUFACTURA ================= -->
+<section class="p-sec alt">
+  <div class="wrap">
+    <span class="label rv">04 · Industrialización</span>
+    <h2 class="h2 rv">Del prototipo a <em>manufactura</em></h2>
+    <p class="lead rv" style="margin-bottom:46px">El desarrollo evolucionó de forma iterativa desde una prueba de concepto en banco hasta una PCB optimizada y cotizada para producción industrial.</p>
+
+    <div class="timeline">
+      <div class="tl rv"><div class="n">01</div><h3>Prototipo inicial</h3><p>Montaje base, programación de la PSoC 5LP y lectura de señales del sensor MQ-7.</p></div>
+      <div class="tl rv"><div class="n">02</div><h3>Pruebas de banco</h3><p>Caracterización eléctrica y ensayos con humo para detectar mejoras de diseño.</p></div>
+      <div class="tl rv"><div class="n">03</div><h3>Revisión 2.0</h3><p>Rediseño integral del circuito y trazado con enfoque hacia fabricación industrial.</p></div>
+      <div class="tl rv"><div class="n">04</div><h3>Optimización 2.1</h3><p>Selección eficiente de componentes y depuración de pistas para reducir costos.</p></div>
+    </div>
+
+    <div class="versions rv">
+      <div class="version"><small>Revisión inicial</small><h3>PCB 2.0</h3><b>USD 29,98</b><span>Cotización JLCPCB sin cupones.</span></div>
+      <div class="version"><small>Revisión optimizada</small><h3>PCB 2.1</h3><b>USD 15,65</b><span>Reducción del 47,8 % en costo de fabricación.</span></div>
+    </div>
+    <p class="final-note rv">Cotizaciones generadas en JLCPCB para 5 tarjetas PCB, incluyendo ensamble SMD en 2 unidades (no incluye componentes THT ni envío). Ambas versiones quedaron verificadas digitalmente y listas para fabricar.</p>
+  </div>
+</section>
+
+<!-- ================= 05 BALANCE Y PROYECCIÓN ================= -->
+<section class="p-sec">
+  <div class="wrap p-grid">
+    <div class="head rv">
+      <span class="label">05 · Cierre</span>
+      <h2>Aprendizajes y <em style="color:var(--accent)">proyección</em></h2>
+    </div>
+    <div class="p-body contrib rv">
+      <div>
+        <h3>Resultados del proyecto</h3>
+        <p>GasShield 5LP unió en un mismo desarrollo el diseño electrónico, la programación de microcontroladores y la instrumentación aplicada a la detección de gases.</p>
+        <p>Los ensayos en laboratorio validaron el desempeño del prototipo: capturó las señales analógicas, gestionó el ciclo térmico del sensor MQ-7, envió los datos vía serial y respondió de manera consistente frente a los estímulos aplicados.</p>
+        <p>Las observaciones obtenidas durante estas pruebas permitieron detectar puntos de mejora clave que guiaron el rediseño del circuito y las versiones preparadas para manufactura industrial.</p>
+      </div>
+      <div>
+        <h3>Aprendizajes personales</h3>
+        <p>El desarrollo de este sistema consolidó mis competencias en programación embebida, configuración de módulos ADC, comunicación serial y control de etapas electrónicas.</p>
+        <p>De igual forma, gané experiencia práctica en el levantamiento de esquemáticos, el enrutamiento de pistas en PCB y la verificación experimental de hardware en banco.</p>
+        <p>La lección más valiosa fue dimensionar la importancia de las mediciones físicas al construir un prototipo, ya que revelan las discrepancias entre el comportamiento teórico esperado y el funcionamiento real del circuito.</p>
+      </div>
+      <div>
+        <h3>Proyección del proyecto</h3>
+        <p>Si bien la etapa académica finalizó, las revisiones industriales diseñadas dejan una base sólida para futuros desarrollos, incluyendo la ampliación del firmware, la calibración formal de los sensores y la validación en condiciones reales de operación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CIERRE ================= -->
+<section class="cta alt">
+  <div class="wrap rv">
+    <h2>¿Te interesa este <em>proyecto</em>?</h2>
+    <p>Escríbeme si deseas conocer más detalles técnicos o explorar una colaboración.</p>
+    <div class="row">
+      <a class="btn" href="index.html#contacto">Contactarme</a>
+      <a class="link" href="index.html#proyectos">← Volver al portafolio</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>GasShield 5LP · Caso de estudio · 2026 · Sebastian Quiza</footer>
+
+<script>
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: .08 });
+  document.querySelectorAll(".rv").forEach(n => io.observe(n));
+
+  // Simulador interactivo de LEDs, ppm y alertas de peligro
+  const slider = document.getElementById("ppm-slider");
+  const ppmVal = document.getElementById("ppm-val");
+  const alertBox = document.getElementById("sim-alert");
+  const alertTitle = document.getElementById("alert-title");
+  const alertMsg = document.getElementById("alert-msg");
+  const leds = { g: document.getElementById("led-g"), y: document.getElementById("led-y"), r: document.getElementById("led-r") };
+  const rows = { g: document.getElementById("row-g"), y: document.getElementById("row-y"), r: document.getElementById("row-r") };
+
+  const niveles = {
+    g: {
+      color: "#12b76a",
+      titulo: "Nivel normal",
+      mensaje: "Concentración baja (< 30 ppm); monitoreo estable sin alerta."
+    },
+    y: {
+      color: "#f5b301",
+      titulo: "Precaución · Aviso moderado",
+      mensaje: "Aumento de concentración (30–80 ppm); se recomienda ventilar y supervisar."
+    },
+    r: {
+      color: "#f04438",
+      titulo: "¡Peligro! · Alerta crítica",
+      mensaje: "Concentración elevada (> 80 ppm); activación de alarma visual y sonora."
+    }
+  };
+
+  function actualizarSimulador() {
+    const v = Number(slider.value);
+    ppmVal.textContent = v;
+    const estado = v < 30 ? "g" : v <= 80 ? "y" : "r";
+    const info = niveles[estado];
+
+    ["g", "y", "r"].forEach(k => {
+      leds[k].classList.toggle("on", k === estado);
+      rows[k].classList.toggle("active", k === estado);
+    });
+
+    alertBox.className = "sim-alert " + estado;
+    alertTitle.textContent = info.titulo;
+    alertMsg.textContent = info.mensaje;
+    slider.style.accentColor = info.color;
+  }
+
+  slider.addEventListener("input", actualizarSimulador);
+  actualizarSimulador();
+</script>
+</body>
+</html>
